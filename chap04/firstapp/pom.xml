@@ -1,0 +1,123 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.mklinkj.study</groupId>
+    <artifactId>spring-thorough-introduction-study-parent</artifactId>
+    <relativePath>../../pom.xml</relativePath>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>spring-framework-ch4-firstapp</artifactId>
+  <packaging>war</packaging>
+  <name>firstapp Maven Webapp</name>
+
+  <properties>
+    <jetty-context-path>/</jetty-context-path>
+    <jstl-scope.type>provided</jstl-scope.type>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>tomcat-run</id>
+      <properties>
+        <!-- jetty는 JSTL이 포함되어있지만, Tomcat은 그렇지 않다. compile로 설정해야함. -->
+        <jstl-scope.type>compile</jstl-scope.type>
+      </properties>
+    </profile>
+  </profiles>
+
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>${jakarta.servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+      <version>${jakarta.servlet.jsp.jstl.version}</version>
+      <scope>${jstl-scope.type}</scope>
+    </dependency>
+
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate-validator.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- webjars -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>bootstrap</artifactId>
+      <version>${webjars-bootstrap.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>webjars-locator</artifactId>
+      <groupId>org.webjars</groupId>
+      <version>${webjars-locator.version}</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <artifactId>junit-jupiter</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>${junit.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>hamcrest</artifactId>
+      <groupId>org.hamcrest</groupId>
+      <scope>test</scope>
+      <version>${hamcrest.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <scope>test</scope>
+      <version>${assertj.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-test</artifactId>
+      <groupId>org.springframework</groupId>
+      <scope>test</scope>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- JSR-303 검증 어노테이션을 테스트 환경에서 실행시 필요 -->
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>jakarta.el</artifactId>
+      <version>${jakarta.el.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
