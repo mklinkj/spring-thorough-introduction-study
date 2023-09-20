@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.mklinkj.study</groupId>
-    <artifactId>spring-thorough-introduction-study-parent</artifactId>
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>spring-thorough-introduction-study-web-application-parent</artifactId>
+    <relativePath>../../web-application-parent/pom.xml</relativePath>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
