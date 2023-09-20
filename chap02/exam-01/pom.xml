@@ -29,6 +29,25 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>${hsqldb.version}</version>
+    </dependency>
+
+    <!-- BCrypt Password Encoder 만 사용 -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-crypto</artifactId>
+      <version>${spring-security.version}</version>
+    </dependency>
+
+    <dependency>
       <artifactId>log4j-slf4j2-impl</artifactId>
       <groupId>org.apache.logging.log4j</groupId>
       <version>${log4j.version}</version>
