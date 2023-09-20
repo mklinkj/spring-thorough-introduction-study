@@ -1,42 +1,16 @@
 package org.mklinkj.study;
 
-import javax.sql.DataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.mklinkj.study.domain.User;
 import org.mklinkj.study.service.UserService;
-import org.mklinkj.study.service.UserServiceImpl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @ComponentScan
 @Configuration
 @Slf4j
 public class Example01Application {
-  @Bean
-  PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
-
-  @Bean
-  DataSource dataSource() {
-    return new EmbeddedDatabaseBuilder() //
-        .setType(EmbeddedDatabaseType.HSQL)
-        .ignoreFailedDrops(true)
-        .addScript("sql/initialize_db.sql")
-        .build();
-  }
-
-  @Bean
-  JdbcTemplate jdbcTemplate() {
-    return new JdbcTemplate(dataSource());
-  }
 
   public static void main(String[] args) {
     try (AnnotationConfigApplicationContext context =
