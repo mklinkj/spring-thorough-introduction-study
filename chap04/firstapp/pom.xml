@@ -85,29 +85,29 @@
     <dependency>
       <artifactId>junit-jupiter</artifactId>
       <groupId>org.junit.jupiter</groupId>
-      <scope>test</scope>
       <version>${junit.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
       <artifactId>hamcrest</artifactId>
       <groupId>org.hamcrest</groupId>
-      <scope>test</scope>
       <version>${hamcrest.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
       <artifactId>assertj-core</artifactId>
       <groupId>org.assertj</groupId>
-      <scope>test</scope>
       <version>${assertj.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
       <artifactId>spring-test</artifactId>
       <groupId>org.springframework</groupId>
-      <scope>test</scope>
       <version>${spring.version}</version>
+      <scope>test</scope>
     </dependency>
 
     <!-- JSR-303 검증 어노테이션을 테스트 환경에서 실행시 필요 -->
