@@ -37,6 +37,8 @@
 
     <aspectj.version>1.9.20.1</aspectj.version>
 
+    <jakarta.inject-api.version>2.0.1</jakarta.inject-api.version>
+
     <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
     <jakarta.servlet.jsp-api.version>3.1.1</jakarta.servlet.jsp-api.version>
 
@@ -121,6 +123,7 @@
       Maven의 공식 플러그인 은 아니다.
     -->
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
+    <properties-maven-plugin.version>1.2.0</properties-maven-plugin.version>
   </properties>
 
 

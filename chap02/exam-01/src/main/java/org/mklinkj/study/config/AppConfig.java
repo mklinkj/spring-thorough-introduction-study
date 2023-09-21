@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class AppConfig {
   @Bean
   PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
+    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
 
   @Bean

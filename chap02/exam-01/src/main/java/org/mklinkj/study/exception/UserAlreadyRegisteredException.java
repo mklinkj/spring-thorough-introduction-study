@@ -1,3 +1,7 @@
 package org.mklinkj.study.exception;
 
-public class UserAlreadyRegisteredException extends RuntimeException {}
+import java.io.Serial;
+
+public class UserAlreadyRegisteredException extends RuntimeException {
+  @Serial private static final long serialVersionUID = 1L;
+}
